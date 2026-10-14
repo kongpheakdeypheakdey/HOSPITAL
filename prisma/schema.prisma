@@ -1,0 +1,207 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  passwordHash String
+  fullName     String
+  role         String        @default("USER") // ADMIN, MANAGER, STAFF, USER
+  avatar       String?
+  phone        String?
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  appointments Appointment[]
+  auditLogs    AuditLog[]
+  rateLimitLogs RateLimitLog[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model Department {
+  id          Int           @id @default(autoincrement())
+  name        String        @unique
+  nameKm      String?
+  code        String?       @unique
+  description String?
+  descKm      String?
+  head        String?
+  beds        Int           @default(20)
+  occupancy   Int           @default(0)
+  status      String        @default("open")
+  icon        String?
+  image       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  doctors      Doctor[]
+  appointments Appointment[]
+  bedsList     Bed[]
+
+  @@index([name])
+}
+
+model Doctor {
+  id           Int           @id @default(autoincrement())
+  name         String
+  nameKm       String?
+  specialty    String
+  specialtyKm  String?
+  departmentId Int?
+  phone        String?
+  email        String?
+  experience   String?
+  languages    String?
+  availability String?
+  status       String        @default("active") // active, inactive, on_leave
+  image        String?
+  bio          String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  department   Department?   @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  appointments Appointment[]
+
+  @@index([name])
+  @@index([specialty])
+  @@index([departmentId])
+}
+
+model Appointment {
+  id              Int         @id @default(autoincrement())
+  patientName     String
+  patientPhone    String
+  patientEmail    String?
+  dob             DateTime?
+  gender          String?
+  departmentId    Int?
+  doctorId        Int?
+  appointmentDate DateTime
+  preferredTime   String?
+  reason          String?
+  status          String      @default("PENDING") // PENDING, CONFIRMED, COMPLETED, CANCELLED
+  userId          Int?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  department      Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  doctor          Doctor?     @relation(fields: [doctorId], references: [id], onDelete: SetNull)
+  user            User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([patientName])
+  @@index([patientPhone])
+  @@index([status])
+  @@index([appointmentDate])
+}
+
+model Bed {
+  id           Int         @id @default(autoincrement())
+  bedNumber    String      @unique
+  wardName     String
+  departmentId Int?
+  status       String      @default("AVAILABLE") // AVAILABLE, OCCUPIED, MAINTENANCE, CLEANING
+  patientName  String?
+  admittedAt   DateTime?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  department   Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+
+  @@index([bedNumber])
+  @@index([status])
+  @@index([wardName])
+}
+
+model ContactInquiry {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String
+  phone        String?
+  subject      String
+  message      String
+  status       String    @default("UNREAD") // UNREAD, READ, REPLIED, ARCHIVED
+  replyMessage String?
+  repliedAt    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([email])
+  @@index([status])
+}
+
+model News {
+  id          Int      @id @default(autoincrement())
+  title       String
+  titleKm     String?
+  category    String   @default("Hospital News") // Hospital News, Health Education, Events, Announcements
+  categoryKm  String?
+  date        String
+  description String
+  descKm      String?
+  content     String?
+  image       String?
+  author      String?  @default("Luang Mè Communications")
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([title])
+  @@index([category])
+}
+
+model Partnership {
+  id          Int      @id @default(autoincrement())
+  name        String
+  nameKm      String?
+  type        String   @default("Academic") // Academic, UN Agency, NGO, Government, Hospital
+  country     String   @default("International")
+  icon        String?
+  image       String?
+  description String
+  descKm      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([name])
+  @@index([type])
+}
+
+model RateLimitLog {
+  id        Int      @id @default(autoincrement())
+  ipAddress String
+  userId    Int?
+  endpoint  String
+  action    String
+  createdAt DateTime @default(now())
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([ipAddress])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int?
+  action    String
+  entity    String?
+  entityId  Int?
+  details   String?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+}

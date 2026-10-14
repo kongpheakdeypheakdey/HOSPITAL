@@ -1,0 +1,40 @@
+{
+  "name": "luangme-hospital-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Luang Mè Hospital System",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:generate": "DATABASE_URL=\"file:../prisma/dev.db\" prisma generate --schema=../prisma/schema.prisma",
+    "prisma:migrate": "DATABASE_URL=\"file:../prisma/dev.db\" prisma migrate dev --schema=../prisma/schema.prisma --name init",
+    "prisma:seed": "DATABASE_URL=\"file:../prisma/dev.db\" NODE_PATH=./node_modules ts-node ../prisma/seed.ts",
+    "prisma:studio": "DATABASE_URL=\"file:../prisma/dev.db\" prisma studio --schema=../prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.9.0",
+    "prisma": "^5.22.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
+}

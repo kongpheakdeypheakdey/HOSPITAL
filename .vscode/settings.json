@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npm run dev": true,
+        "lsof": true,
+        "ss": true
+    },
+    "chat.byokUtilityModelDefault": "none"
+}
