@@ -8,9 +8,11 @@ import { config } from './config';
 import { apiRateLimiter } from './middleware/rateLimiter';
 
 const app = express();
+const frontendDistPath = path.join(__dirname, '../../frontend/dist');
 
 const allowedOrigins = [
   config.clientUrl,
+  process.env.RENDER_EXTERNAL_URL,
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:5174',
@@ -61,12 +63,18 @@ app.get('/health', (req, res) => {
 // API Routes
 app.use('/api', routes);
 
-// 404 Route Handler
+// Serve the frontend and support direct navigation to client-side routes.
+app.use(express.static(frontendDistPath));
+
 app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: `API endpoint '${req.originalUrl}' not found.`,
-  });
+  if (req.path === '/api' || req.path.startsWith('/api/')) {
+    return res.status(404).json({
+      success: false,
+      message: `API endpoint '${req.originalUrl}' not found.`,
+    });
+  }
+
+  return res.sendFile(path.join(frontendDistPath, 'index.html'));
 });
 
 // Global Error Handler

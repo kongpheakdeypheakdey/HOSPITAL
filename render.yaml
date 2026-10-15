@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: luang-me-hospital
+    runtime: node
+    plan: starter
+    buildCommand: >-
+      npm ci --prefix backend &&
+      npm ci --prefix frontend &&
+      cd backend &&
+      DATABASE_URL=file:./dev.db npx prisma generate --schema=../prisma/schema.prisma &&
+      npm run build &&
+      cd ../frontend &&
+      npm run build
+    preDeployCommand: >-
+      cd backend &&
+      npx prisma db push --schema=../prisma/schema.prisma &&
+      node dist/scripts/ensureInitialAdmin.js
+    startCommand: npm --prefix backend start
+    healthCheckPath: /health
+    disk:
+      name: luang-me-hospital-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/var/data/luangme-hospital.db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: INITIAL_ADMIN_EMAIL
+        sync: false
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      - key: INITIAL_ADMIN_NAME
+        sync: false

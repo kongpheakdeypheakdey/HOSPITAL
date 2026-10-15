@@ -168,7 +168,16 @@ npm run build
 
 ---
 
-## 08 — Key Features Implemented
+## 08 — Deploy on Render
+
+The repository includes a Render Blueprint in `render.yaml` for a single service that builds and serves the frontend and API. It requires a paid persistent disk for SQLite.
+
+1. In Render, create a new Blueprint and connect this GitHub repository.
+2. Set `INITIAL_ADMIN_EMAIL` and `INITIAL_ADMIN_PASSWORD` when prompted. Use a unique password of at least 16 characters; do not use development seed credentials.
+3. Render generates `JWT_SECRET` and `SESSION_SECRET` automatically. The app creates the initial administrator once and keeps SQLite data on its persistent disk.
+4. After deploy, sign in at `/login` with the administrator credentials and add departments, doctors, and partnerships. The demo seed script is not run in production.
+
+## 09 — Key Features Implemented
 
 1. **Bilingual Support (English & Khmer)**:
    - Header language toggle (`EN` / `ខ្មែរ`).
@@ -176,9 +185,7 @@ npm run build
    - Live bed occupancy updates from SQLite database.
 3. **Doctor & Specialty Directory**:
    - Server-side debounced search, department filtering, and schedule availability.
-4. **Interactive Appointment Booking**:
-   - Real-time submission, Zod form validation, reference ID confirmation.
-5. **Full Hospital Management System Dashboard (`/admin`)**:
+4. **Full Hospital Management System Dashboard (`/admin`)**:
    - Real-time metric cards (Total Patients, Active Doctors, Bed Occupancy %, Unread Inquiries).
    - Appointments CRUD (Status changes, Delete confirmation).
    - Doctors CRUD (Add Doctor Modal, Edit Doctor, Delete Doctor).
