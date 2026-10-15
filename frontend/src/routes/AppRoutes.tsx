@@ -11,7 +11,6 @@ import { AnnouncementPageThree } from '../pages/announcement3';
 import { AnnouncementPageFour } from '../pages/announcement4';
 import { AnnouncementPageFive } from '../pages/announcement5';
 import { PartnershipsPage } from '../pages/PartnershipsPage';
-import { AppointmentPage } from '../pages/AppointmentPage';
 import { EmergencyPage } from '../pages/EmergencyPage';
 import { LoginPage } from '../pages/LoginPage';
 import { AdminPage } from '../pages/AdminPage';
@@ -32,7 +31,6 @@ export const AppRoutes: React.FC = () => {
       <Route path="/announcements5" element={<AnnouncementPageFive />} />
       <Route path="/new" element={<NewsArticlePage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
-      <Route path="/appointment" element={<AppointmentPage />} />
       <Route path="/emergency" element={<EmergencyPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/admin" element={<AdminPage />} />

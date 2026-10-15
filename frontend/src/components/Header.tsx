@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
 import { HospitalLogo } from './HospitalLogo';
-import { Menu, X, LogIn, LogOut, LayoutDashboard } from 'lucide-react';
+import { Menu, X, LogOut, LayoutDashboard } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const { lang, setLang, isKhmer } = useLanguage();
   const { user, logout } = useAuth();
   const location = useLocation();
-  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => location.pathname === path;
@@ -75,7 +74,7 @@ export const Header: React.FC = () => {
             </button>
           </div>
 
-          {user ? (
+          {user && (
             <div className="flex items-center gap-3">
               <Link
                 to="/admin"
@@ -92,14 +91,6 @@ export const Header: React.FC = () => {
                 {isKhmer ? 'ចាកចេញ' : 'Logout'}
               </button>
             </div>
-          ) : (
-            <Link
-              to="/login"
-              className="flex items-center gap-1 text-xs text-slate-700 hover:text-slate-900 font-medium transition-colors"
-            >
-              <LogIn className="w-3.5 h-3.5" />
-              {isKhmer ? 'ចូលរដ្ឋបាល' : 'Staff Login'}
-            </Link>
           )}
         </div>
 

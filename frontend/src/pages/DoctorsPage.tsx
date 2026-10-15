@@ -186,12 +186,6 @@ export const DoctorsPage: React.FC = () => {
                   </div>
                 </div>
 
-                <Link
-                  to={`/appointment?doctorId=${doc.id}&departmentId=${doc.departmentId || ''}`}
-                  className="w-full py-2.5 rounded-xl bg-[#0F4C8A] hover:bg-[#0D3F75] text-white text-xs font-semibold text-center transition-colors block"
-                >
-                  {isKhmer ? 'ស្វែងរក' : 'View'}
-                </Link>
               </div>
             ))}
           </div>

@@ -120,9 +120,6 @@ export const Footer: React.FC = () => {
             <Link to="/emergency" className="hover:text-white transition-colors">
               {isKhmer ? 'សង្គ្រោះបន្ទាន់' : 'Emergency'}
             </Link>
-            <Link to="/login" className="hover:text-white transition-colors">
-              {isKhmer ? 'រដ្ឋបាល' : 'Staff Portal'}
-            </Link>
           </div>
         </div>
       </div>
