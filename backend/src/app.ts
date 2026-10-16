@@ -10,6 +10,8 @@ import { apiRateLimiter } from './middleware/rateLimiter';
 const app = express();
 const frontendDistPath = path.join(__dirname, '../../frontend/dist');
 
+app.set('trust proxy', config.env === 'production' ? 1 : false);
+
 const allowedOrigins = [
   config.clientUrl,
   process.env.RENDER_EXTERNAL_URL,

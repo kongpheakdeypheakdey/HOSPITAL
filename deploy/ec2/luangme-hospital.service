@@ -1,0 +1,25 @@
+[Unit]
+Description=Luang Me Hospital web application
+After=network.target
+
+[Service]
+Type=simple
+User=luangme-hospital
+Group=luangme-hospital
+WorkingDirectory=/opt/luangme-hospital
+EnvironmentFile=/etc/luangme-hospital/production.env
+ExecStart=/usr/bin/node /opt/luangme-hospital/backend/dist/server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0027
+StateDirectory=luangme-hospital
+StateDirectoryMode=0750
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ReadWritePaths=/opt/luangme-hospital/uploads
+
+[Install]
+WantedBy=multi-user.target
