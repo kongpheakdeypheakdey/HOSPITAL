@@ -119,7 +119,7 @@ export const DepartmentsPage: React.FC = () => {
           {departmentsToRender.map((dept) => (
             <div
               key={dept.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+              className="glass rounded-3xl overflow-hidden hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -151,10 +151,44 @@ export const DepartmentsPage: React.FC = () => {
               </div>
               <div className="px-6 py-4 bg-slate-50/50 border-t border-slate-100">
                 <Link
-                  to={`/doctors?departmentId=${dept.id}`}
+                  to={
+                    dept.code === 'ONCOLOGY'
+                      ? '/oncology'
+                      : dept.code === 'GYNECOLOGIC_ONCOLOGY'
+                      ? '/gynecologic'
+                      : dept.code === 'SURGICAL_ONCOLOGY'
+                      ? '/surgery'
+                      : dept.code === 'OPD'
+                      ? '/opd'
+                      : dept.code === 'EMERGENCY'
+                      ? '/emergency'
+                      : dept.code === 'RADIOLOGY'
+                      ? '/radiology'
+                      : dept.code === 'LAB'
+                      ? '/laboratory'
+                      : dept.code === 'ANATOMICAL_PATHOLOGY'
+                      ? '/pathology'
+                      : dept.code === 'ENDOSCOPY'
+                      ? '/endoscopy'
+                      : dept.code === 'ICU'
+                      ? '/icu'
+                      : dept.code === 'PHARMACY'
+                      ? '/pharmacy'
+                      : dept.code === 'SOCIAL_SERVICES'
+                      ? '/social-services'
+                      : `/doctors?departmentId=${dept.id}`
+                  }
                   className="text-xs font-bold text-[#0F4C8A] hover:underline flex items-center gap-1"
                 >
-                  <span>{isKhmer ? 'មើលគ្រូពេទ្យក្នុងផ្នែកនេះ' : 'View Specialists'}</span>
+                  <span>
+                    {dept.code === 'ONCOLOGY' || dept.code === 'GYNECOLOGIC_ONCOLOGY' || dept.code === 'SURGICAL_ONCOLOGY' || dept.code === 'OPD' || dept.code === 'EMERGENCY' || dept.code === 'RADIOLOGY' || dept.code === 'LAB' || dept.code === 'ANATOMICAL_PATHOLOGY' || dept.code === 'ENDOSCOPY' || dept.code === 'ICU' || dept.code === 'PHARMACY' || dept.code === 'SOCIAL_SERVICES'
+                      ? isKhmer
+                        ? 'មើលផ្នែក'
+                        : 'View Department'
+                      : isKhmer
+                      ? 'មើលគ្រូពេទ្យក្នុងផ្នែកនេះ'
+                      : 'View Specialists'}
+                  </span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>

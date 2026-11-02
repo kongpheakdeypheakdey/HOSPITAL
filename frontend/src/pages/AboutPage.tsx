@@ -157,7 +157,7 @@ export const AboutPage: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {historyTimeline.map((item) => (
-            <div key={item.year} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div key={item.year} className="rounded-2xl glass p-6">
               <div className="text-sm font-bold uppercase tracking-[0.12em] text-[#0F4C8A]">{item.year}</div>
               <h3 className="mt-3 text-xl font-bold text-[#0B1D2E]">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
@@ -166,7 +166,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+      <section className="rounded-3xl glass p-8">
         <div className="mb-6 flex items-center gap-3">
           <Building2 className="w-6 h-6 text-[#0F4C8A]" />
           <h2 className="text-2xl font-bold text-[#0B1D2E]">
@@ -199,7 +199,7 @@ export const AboutPage: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
               {internationalPartners.map((partner) => (
-                <div key={partner.name} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+                <div key={partner.name} className="rounded-2xl glass p-4 transition hover:shadow-md">
                   <div className="mb-3 flex items-center gap-3">
                     <img src={partner.logo} alt={partner.name} className="h-14 w-14 shrink-0 rounded-2xl object-cover shadow-sm" />
                     <div className="min-w-0 text-sm font-bold leading-snug text-[#0B1D2E]">{isKhmer ? partner.nameKm : partner.name}</div>

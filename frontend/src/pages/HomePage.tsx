@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { ShieldAlert, UserCheck, ArrowRight, HeartPulse, Building2, Stethoscope, Award, CheckCircle2, PhoneCall } from 'lucide-react';
+import {
+  ShieldAlert,
+  ArrowRight,
+  PhoneCall,
+  Stethoscope,
+  Ambulance,
+  ScanLine,
+  Radiation,
+  FlaskConical,
+  Syringe,
+  Baby,
+  Scissors,
+  Activity,
+  Pill,
+  Microscope,
+  HeartPulse,
+} from 'lucide-react';
+
+const heroSlides = [
+  '/image/cover.JPG',
+  '/image/cover1.JPG',
+  '/image/cover2.JPG',
+];
+
+const HERO_INTERVAL = 6000;
 
 export const HomePage: React.FC = () => {
   const { isKhmer } = useLanguage();
+
+  // Auto-rotating hero cover slideshow (crossfade + Ken Burns zoom).
+  const [activeSlide, setActiveSlide] = useState(0);
+  useEffect(() => {
+    const id = window.setInterval(
+      () => setActiveSlide((i) => (i + 1) % heroSlides.length),
+      HERO_INTERVAL,
+    );
+    return () => window.clearInterval(id);
+  }, []);
 
   const featuredDepartments = [
     {
@@ -12,7 +46,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ផ្តល់សេវាពិគ្រោះ ពិនិត្យវិភាគរោគសញ្ញា និងព្យាបាលអ្នកជំងឺដែលមិនតម្រូវឱ្យសម្រាកគេងនៅមន្ទីរពេទ្យ។'
         : 'Provides medical consultations, diagnostic evaluations, and treatments for patients who do not require overnight hospitalization.',
-      icon: UserCheck,
+      icon: Stethoscope,
       color: 'bg-[#EAF4FF] text-[#0F4C8A] border-[#C7DEF9]',
     },
     {
@@ -20,7 +54,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ផ្តល់ការសង្គ្រោះ និងព្យាបាលបន្ទាន់ ២៤ ម៉ោងលើ ២៤ ម៉ោង សម្រាប់ករណីគ្រោះថ្នាក់ចៃដន្យ ជំងឺធ្ងន់ធ្ងរ ឬស្ថានភាពគំរាមកំហែងដល់អាយុជីវិត។'
         : 'Delivers immediate 24/7 medical care for acute illnesses, severe trauma, and life-threatening conditions.',
-      icon: HeartPulse,
+      icon: Ambulance,
       color: 'bg-[#FFF1F1] text-[#B42318] border-[#FECACA]',
     },
     {
@@ -28,7 +62,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ប្រើប្រាស់បច្ចេកវិទ្យារូបភាពទំនើបៗ (ដូចជា អ៊ិចរ៉េ អេកូ ស្កេន CT និង MRI) ដើម្បីធ្វើរោគវិនិច្ឆ័យ និងតាមដានស្ថានភាពជំងឺបានច្បាស់លាស់។'
         : 'Uses advanced imaging technologies (X-ray, CT scan, MRI, ultrasound) to accurately diagnose and monitor medical conditions.',
-      icon: Stethoscope,
+      icon: ScanLine,
       color: 'bg-emerald-50 text-emerald-600 border-emerald-200',
     },
     {
@@ -36,7 +70,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ជំនាញក្នុងការថែទាំ និងព្យាបាលជំងឺមហារីកគ្រប់ជ្រុងជ្រោយ រួមមានការព្យាបាលដោយគីមី ការបាញ់កាំរស្មី និងការថែទាំលើកកម្ពស់គុណភាពជីវិត។'
         : 'Specializes in comprehensive cancer care, including systemic therapies, targeted radiation treatments, and supportive care.',
-      icon: ShieldAlert,
+      icon: Radiation,
       color: 'bg-violet-50 text-violet-600 border-violet-200',
     },
     {
@@ -44,7 +78,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ធ្វើតេស្តវិភាគសំណាកឈាម ទឹករាវក្នុងរាងកាយ និងជាលិកា ដើម្បីជួយគ្រូពេទ្យធ្វើរោគវិនិច្ឆ័យ និងកំណត់វិធីព្យាបាលបានត្រឹមត្រូវ។'
         : 'Performs clinical tests on blood, bodily fluids, and tissue samples to assist in precise disease diagnosis and management.',
-      icon: Award,
+      icon: FlaskConical,
       color: 'bg-amber-50 text-amber-600 border-amber-200',
     },
     {
@@ -52,7 +86,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ផ្តល់ថ្នាំសន្លប់ ថ្នាំស្ពឹក និងការគ្រប់គ្រងការឈឺចាប់ពេលវះកាត់ ព្រមទាំងតាមដានសុខភាពអ្នកជំងឺយ៉ាងដិតដល់បន្ទាប់ពីភ្ញាក់ដឹងខ្លួនឡើងវិញ។'
         : 'Administers sedation and pain control during surgical procedures and monitors patients closely as they wake up.',
-      icon: CheckCircle2,
+      icon: Syringe,
       color: 'bg-sky-50 text-sky-600 border-sky-200',
     },
     {
@@ -60,7 +94,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ផ្តោតលើការថែទាំសុខភាពបន្តពូជរបស់ស្ត្រី ការពិនិត្យសុខភាពទូទៅ និងការព្យាបាលជំងឺផ្សេងៗដែលពាក់ព័ន្ធនឹងប្រព័ន្ធរោគស្ត្រី។'
         : 'Focuses on female reproductive health, routine gynecological screenings, and surgical or medical treatment of pelvic conditions.',
-      icon: UserCheck,
+      icon: Baby,
       color: 'bg-pink-50 text-pink-600 border-pink-200',
     },
     {
@@ -68,7 +102,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ទទួលបន្ទុកធ្វើការវះកាត់តាមការគ្រោងទុក និងការវះកាត់បន្ទាន់លើឯកទេសជាច្រើន ដោយប្រើបច្ចេកទេសវះកាត់ចោះ ឬវះកាត់បើកចំហ។'
         : 'Performs elective and urgent operative procedures across multiple specialties using minimally invasive and open techniques.',
-      icon: Building2,
+      icon: Scissors,
       color: 'bg-cyan-50 text-cyan-700 border-cyan-200',
     },
     {
@@ -76,7 +110,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ផ្តល់ការតាមដានស្ថានភាពសុខភាព ២៤ ម៉ោងជាប្រចាំ ជាមួយឧបករណ៍ទ្រទ្រង់ជីវិតទំនើបៗ សម្រាប់អ្នកជំងឺដែលមានស្ថានភាពធ្ងន់ធ្ងរបំផុត។'
         : 'Offers continuous monitoring, advanced life-support systems, and specialized care for critically ill patients.',
-      icon: HeartPulse,
+      icon: Activity,
       color: 'bg-red-50 text-red-600 border-red-200',
     },
     {
@@ -84,7 +118,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ចែកចាយ និងផ្តល់ថ្នាំពេទ្យ ប្រឹក្សាយោបល់អំពីរបៀបប្រើប្រាស់ថ្នាំ និងធានានូវសុវត្ថិភាពខ្ពស់ក្នុងការប្រើប្រាស់ឱសថ។'
         : 'Dispenses medications, provides medication counseling, and manages pharmaceutical supplies to ensure safe drug therapy.',
-      icon: CheckCircle2,
+      icon: Pill,
       color: 'bg-[#F5F6F8] text-[#1E293B] border-[#E2E8F0]',
     },
     {
@@ -92,7 +126,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ប្រើប្រាស់ឧបករណ៍កាមេរ៉ាឆ្លុះដើម្បីពិនិត្យ យកជាលិកាធ្វើតេស្ត និងព្យាបាលបញ្ហាផ្សេងៗក្នុងប្រព័ន្ធរំលាយអាហារ ដូចជា ក្រពះ និងពោះវៀន។'
         : 'Uses specialized camera scopes to examine, biopsy, and treat disorders within the gastrointestinal tract and internal organs.',
-      icon: Stethoscope,
+      icon: Microscope,
       color: 'bg-teal-50 text-teal-600 border-teal-200',
     },
     {
@@ -100,7 +134,7 @@ export const HomePage: React.FC = () => {
       desc: isKhmer
         ? 'ផ្តល់ការតាមដានជាបន្តបន្ទាប់ និងឧបករណ៍ជួយរស់ទំនើប សម្រាប់អ្នកជំងឺដែលស្ថិតក្នុងស្ថានភាពធ្ងន់ធ្ងរ និងត្រូវការថែទាំពិសេស។'
         : 'Provides continuous monitoring, advanced life-support systems, and specialized care for critically ill patients.',
-      icon: Award,
+      icon: HeartPulse,
       color: 'bg-lime-50 text-lime-700 border-lime-200',
     },
   ];
@@ -110,11 +144,18 @@ export const HomePage: React.FC = () => {
       {/* Hero Banner */}
       <section className="relative overflow-hidden bg-slate-900">
         <div className="relative aspect-[16/9] max-h-[80vh] w-full">
-          <img
-            src="/image/cover1.JPG"
-            alt={isKhmer ? 'មន្ទីរពេទ្យហ្លួងម៉ែ' : 'Luang Mè Hospital'}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+          {/* Auto-rotating cover slideshow — each slide crossfades and slowly zooms */}
+          {heroSlides.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={isKhmer ? 'មន្ទីរពេទ្យហ្លួងម៉ែ' : 'Luang Mè Hospital'}
+              aria-hidden={i !== activeSlide}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
+                i === activeSlide ? 'opacity-100 animate-kenburns' : 'opacity-0'
+              }`}
+            />
+          ))}
           {/* Light, clean gradient — darkens only the lower-left for text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/55 via-transparent to-transparent" />
@@ -162,6 +203,22 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Slide indicators */}
+          <div className="absolute bottom-5 right-4 z-20 flex items-center gap-2 sm:right-6 lg:right-8">
+            {heroSlides.map((src, i) => (
+              <button
+                key={src}
+                type="button"
+                onClick={() => setActiveSlide(i)}
+                aria-label={`Show slide ${i + 1}`}
+                aria-current={i === activeSlide}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === activeSlide ? 'w-7 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
       {/* Featured Medical Services */}
@@ -183,7 +240,7 @@ export const HomePage: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
+                className="glass rounded-2xl p-6 hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
               >
                 <div className="space-y-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${dept.color}`}>
@@ -270,7 +327,7 @@ export const HomePage: React.FC = () => {
               key={director.name}
               className={index === 0 ? 'md:col-span-3 flex justify-center' : ''}
             >
-              <div className="h-[350px] w-[250px] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md">
+              <div className="h-[350px] w-[250px] overflow-hidden rounded-lg glass transition-all hover:shadow-md">
                 <div className="h-[240px] w-full overflow-hidden">
                   <img
                     src={director.image}
@@ -289,7 +346,6 @@ export const HomePage: React.FC = () => {
       </section>
 
       <section className="w-full px-0 py-4">
-        <div className="overflow-hidden border-y border-slate-200 bg-white shadow-sm">
           <div className="w-full">
             <div className="relative h-[420px] w-full bg-slate-200">
               <iframe
@@ -323,7 +379,6 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Hospital Leadership Message */}

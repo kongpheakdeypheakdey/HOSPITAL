@@ -11,9 +11,18 @@ import { AnnouncementPageThree } from '../pages/announcement3';
 import { AnnouncementPageFour } from '../pages/announcement4';
 import { AnnouncementPageFive } from '../pages/announcement5';
 import { PartnershipsPage } from '../pages/PartnershipsPage';
-import { EmergencyPage } from '../pages/EmergencyPage';
-import { LoginPage } from '../pages/LoginPage';
-import { AdminPage } from '../pages/AdminPage';
+import { EmergencyDeptPage } from '../pages/Emergency';
+import { OncologyPage } from '../pages/oncology1';
+import { GynecologicPage } from '../pages/Gynecologic1';
+import { SurgeryPage } from '../pages/surgery1';
+import { OutpatientPage } from '../pages/Outpatien1';
+import { MedicalImagingPage } from '../pages/Medical';
+import { LaboratoryPage } from '../pages/Laboratory';
+import { AnatomicalPathologyPage } from '../pages/Anatomical';
+import { EndoscopyPage } from '../pages/Endoscopy';
+import { ICUPage } from '../pages/Icu';
+import { PharmacyPage } from '../pages/Pharmacy';
+import { SocialServicesPage } from '../pages/nssf';
 
 export const AppRoutes: React.FC = () => {
   return (
@@ -31,9 +40,18 @@ export const AppRoutes: React.FC = () => {
       <Route path="/announcements5" element={<AnnouncementPageFive />} />
       <Route path="/new" element={<NewsArticlePage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
-      <Route path="/emergency" element={<EmergencyPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/admin" element={<AdminPage />} />
+      <Route path="/emergency" element={<EmergencyDeptPage />} />
+      <Route path="/oncology" element={<OncologyPage />} />
+      <Route path="/gynecologic" element={<GynecologicPage />} />
+      <Route path="/surgery" element={<SurgeryPage />} />
+      <Route path="/opd" element={<OutpatientPage />} />
+      <Route path="/radiology" element={<MedicalImagingPage />} />
+      <Route path="/laboratory" element={<LaboratoryPage />} />
+      <Route path="/pathology" element={<AnatomicalPathologyPage />} />
+      <Route path="/endoscopy" element={<EndoscopyPage />} />
+      <Route path="/icu" element={<ICUPage />} />
+      <Route path="/pharmacy" element={<PharmacyPage />} />
+      <Route path="/social-services" element={<SocialServicesPage />} />
       <Route path="*" element={<HomePage />} />
     </Routes>
   );

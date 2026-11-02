@@ -51,20 +51,23 @@ export const AnnouncementPageFour: React.FC = () => {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12">
-      <Link to="/news" className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-[#0F4C8A] hover:text-[#0B1D2E]">
+      <Link
+        to="/news"
+        className="glass glass-hover mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-[#0F4C8A] hover:text-[#0B1D2E]"
+      >
         <ArrowLeft className="h-4 w-4" />
         {isKhmer ? 'ត្រឡប់ទៅព័ត៌មាន' : 'Back to News'}
       </Link>
 
-      <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="relative h-64 overflow-hidden bg-slate-100 md:h-[420px]">
+      <article className="glass-strong overflow-hidden rounded-3xl">
+        <div className="relative h-64 overflow-hidden md:h-[420px]">
           <img src={article.image} alt={headline} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
           <div className="absolute inset-x-5 bottom-5 flex flex-wrap items-center justify-between gap-3 text-white md:inset-x-8 md:bottom-8">
-            <span className="rounded-full bg-[#D97706] px-3 py-1 text-xs font-semibold uppercase">
+            <span className="glass-blue rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
               {isKhmer ? article.categoryKm : article.category}
             </span>
-            <span className="inline-flex items-center gap-2 text-sm">
+            <span className="glass-blue inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm text-white">
               <CalendarDays className="h-4 w-4" />
               {article.date}
             </span>
@@ -72,15 +75,15 @@ export const AnnouncementPageFour: React.FC = () => {
         </div>
 
         <div className="p-5 md:p-8">
-          <div className="mb-5 flex flex-wrap items-center gap-4 text-sm text-slate-500">
-            <span className="inline-flex items-center gap-2"><Newspaper className="h-4 w-4 text-[#0F4C8A]" />Loung Me Hospital</span>
-            <span className="inline-flex items-center gap-2"><Eye className="h-4 w-4 text-[#D97706]" />{isKhmer ? 'ព័ត៌មានសាធារណៈ' : 'Public Update'}</span>
-            <span className="inline-flex items-center gap-2"><Clock3 className="h-4 w-4" />{isKhmer ? 'អាន ២ នាទី' : '2 minutes read'}</span>
+          <div className="mb-5 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5"><Newspaper className="h-4 w-4 text-[#0F4C8A]" />Loung Me Hospital</span>
+            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5"><Eye className="h-4 w-4 text-[#D97706]" />{isKhmer ? 'ព័ត៌មានសាធារណៈ' : 'Public Update'}</span>
+            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5"><Clock3 className="h-4 w-4 text-[#0F4C8A]" />{isKhmer ? 'អាន ២ នាទី' : '2 minutes read'}</span>
           </div>
 
           <h1 className="text-2xl font-bold leading-relaxed text-[#0B1D2E] md:text-3xl">{headline}</h1>
 
-          <div className="mt-7 space-y-4 text-base leading-8 text-slate-700">
+          <div className="glass mt-7 space-y-4 rounded-2xl p-5 text-base leading-8 text-slate-700 md:p-6">
             {articleBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
 
@@ -89,17 +92,18 @@ export const AnnouncementPageFour: React.FC = () => {
               <h2 id="announcement-gallery-title" className="text-xl font-bold text-[#0B1D2E]">
                 {isKhmer ? 'រូបថត' : 'Gallery'}
               </h2>
-              <span className="text-sm text-slate-500">{gallery.length} {isKhmer ? 'រូបថត' : 'photos'}</span>
+              <span className="glass rounded-full px-3 py-1 text-sm text-slate-600">{gallery.length} {isKhmer ? 'រូបថត' : 'photos'}</span>
             </div>
             <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
               {gallery.map((image, index) => (
-                <img
-                  key={image}
-                  src={image}
-                  alt={`${headline} ${index + 1}`}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full rounded-lg border border-slate-200 bg-slate-100 object-cover"
-                />
+                <div key={image} className="glass glass-hover overflow-hidden rounded-xl p-1.5">
+                  <img
+                    src={image}
+                    alt={`${headline} ${index + 1}`}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full rounded-lg object-cover"
+                  />
+                </div>
               ))}
             </div>
           </section>

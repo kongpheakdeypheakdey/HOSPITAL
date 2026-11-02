@@ -135,7 +135,7 @@ export const DoctorsPage: React.FC = () => {
               return (
                 <div
                   key={doc.id}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0F4C8A]/30 hover:shadow-xl hover:shadow-slate-200"
+                  className="group flex flex-col overflow-hidden rounded-2xl glass transition-all duration-300 hover:-translate-y-1 hover:border-[#0F4C8A]/30 hover:shadow-xl hover:shadow-slate-200"
                 >
                   {/* Department band */}
                   {doc.department && (

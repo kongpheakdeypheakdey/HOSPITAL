@@ -122,7 +122,7 @@ export const ContactPage: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="lg:col-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+        <div className="lg:col-span-2 glass rounded-3xl p-8">
           {submitted ? (
             <div className="text-center space-y-4 py-12">
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">

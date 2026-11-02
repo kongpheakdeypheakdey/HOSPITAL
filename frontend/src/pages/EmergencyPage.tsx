@@ -40,7 +40,7 @@ export const EmergencyPage: React.FC = () => {
       </div>
 
       {/* Real-time Ward Bed Status */}
-      <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm space-y-6">
+      <div className="glass rounded-3xl p-8 space-y-6">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
           <div className="space-y-1">
             <h2 className="text-xl font-bold text-[#0B1D2E] flex items-center gap-2">
@@ -84,7 +84,7 @@ export const EmergencyPage: React.FC = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-3">
+          <div className="glass rounded-3xl p-6 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg">
               1
             </div>
@@ -98,7 +98,7 @@ export const EmergencyPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-3">
+          <div className="glass rounded-3xl p-6 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-[#0F4C8A]/10 text-[#0F4C8A] flex items-center justify-center font-bold text-lg">
               2
             </div>
@@ -112,7 +112,7 @@ export const EmergencyPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-3">
+          <div className="glass rounded-3xl p-6 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
               3
             </div>

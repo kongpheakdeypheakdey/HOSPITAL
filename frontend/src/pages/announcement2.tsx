@@ -102,7 +102,7 @@ export const AnnouncementPageTwo: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,2.2fr)_minmax(300px,0.8fr)]">
-          <article className="khmer-news-article overflow-hidden rounded-[30px] bg-white shadow-[0_18px_55px_rgba(15,25,42,0.08)] border border-slate-100">
+          <article className="khmer-news-article overflow-hidden rounded-[30px] glass">
             <div className="relative h-[260px] md:h-[420px] overflow-hidden">
               <img src={article.image} alt={headline} className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/70 via-[#111827]/10 to-transparent" />

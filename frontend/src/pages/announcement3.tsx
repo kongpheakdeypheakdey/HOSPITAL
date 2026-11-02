@@ -52,7 +52,7 @@ export const AnnouncementPageThree: React.FC = () => {
         {isKhmer ? 'ត្រឡប់ទៅព័ត៌មាន' : 'Back to News'}
       </Link>
 
-      <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <article className="overflow-hidden rounded-2xl glass">
         <div className="relative h-64 overflow-hidden bg-slate-100 md:h-[420px]">
           <img src={article.image} alt={headline} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />

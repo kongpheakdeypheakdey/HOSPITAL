@@ -48,7 +48,7 @@ export const PartnershipsPage: React.FC = () => {
   const renderCard = (part: Partnership) => (
     <div
       key={part.id}
-      className="group rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_12px_30px_rgba(15,25,42,0.04)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,25,42,0.08)]"
+      className="group rounded-[28px] glass p-5 transition duration-200 hover:-translate-y-1 hover:"
     >
       <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
@@ -99,7 +99,7 @@ export const PartnershipsPage: React.FC = () => {
         <EmptyState title={isKhmer ? 'មិនមានទិន្នន័យដៃគូ' : 'No partnerships listed'} />
       ) : (
         <div className="space-y-10">
-          <section className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 md:p-8">
+          <section className="rounded-[30px] glass p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0F4C8A]/10 text-[#0F4C8A]">
                 <GraduationCap className="h-5 w-5" />
@@ -114,7 +114,7 @@ export const PartnershipsPage: React.FC = () => {
             </div>
           </section>
 
-          <section className="rounded-[30px] border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <section className="rounded-[30px] glass p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0F4C8A]/10 text-[#0F4C8A]">
                 <Globe2 className="h-5 w-5" />

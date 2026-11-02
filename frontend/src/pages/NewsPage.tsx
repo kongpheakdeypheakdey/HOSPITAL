@@ -228,7 +228,7 @@ export const NewsPage: React.FC = () => {
                 <Link
                   key={`${article.title}-${article.date}`}
                   to={article.route ?? '/announcements'}
-                  className="news-card block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-soft"
+                  className="news-card block overflow-hidden rounded-2xl glass transition hover:shadow-soft"
                 >
                   <article className="h-full">
                     <div className="overflow-hidden">

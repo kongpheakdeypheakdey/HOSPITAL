@@ -326,7 +326,7 @@ export const AdminPage: React.FC = () => {
       {/* Main Admin Workspace */}
       <div className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Sidebar Nav */}
-        <aside className="lg:col-span-1 bg-white rounded-3xl p-4 border border-slate-200/80 shadow-sm space-y-1 h-fit">
+        <aside className="lg:col-span-1 glass rounded-3xl p-4 space-y-1 h-fit">
           <button
             onClick={() => setActiveTab('overview')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-bold transition-all ${
@@ -417,26 +417,26 @@ export const AdminPage: React.FC = () => {
             <div className="space-y-6">
               {/* Summary Cards */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm space-y-1">
+                <div className="glass rounded-2xl p-5 space-y-1">
                   <div className="text-xs text-slate-500 font-semibold">Total Appointments</div>
                   <div className="text-2xl font-bold text-[#0B1D2E]">{dashboardData?.metrics?.totalPatients || 0}</div>
                 </div>
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm space-y-1">
+                <div className="glass rounded-2xl p-5 space-y-1">
                   <div className="text-xs text-slate-500 font-semibold">Active Doctors</div>
                   <div className="text-2xl font-bold text-[#0F4C8A]">{dashboardData?.metrics?.activeDoctors || 0}</div>
                 </div>
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm space-y-1">
+                <div className="glass rounded-2xl p-5 space-y-1">
                   <div className="text-xs text-slate-500 font-semibold">Bed Occupancy Rate</div>
                   <div className="text-2xl font-bold text-emerald-600">{dashboardData?.metrics?.bedOccupancyRate || 78}%</div>
                 </div>
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm space-y-1">
+                <div className="glass rounded-2xl p-5 space-y-1">
                   <div className="text-xs text-slate-500 font-semibold">Unread Inquiries</div>
                   <div className="text-2xl font-bold text-amber-600">{dashboardData?.metrics?.unreadInquiries || 0}</div>
                 </div>
               </div>
 
               {/* Department Occupancy Status */}
-              <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-4">
+              <div className="glass rounded-3xl p-6 space-y-4">
                 <h3 className="text-base font-bold text-[#0B1D2E]">Department Bed Capacity & Occupancy</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {dashboardData?.departments?.map((dept: Department) => (
@@ -460,7 +460,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 2: APPOINTMENTS */}
           {activeTab === 'appointments' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <h3 className="text-lg font-bold text-[#0B1D2E]">Appointments Manager</h3>
                 <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -550,7 +550,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 3: DOCTORS */}
           {activeTab === 'doctors' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <h3 className="text-lg font-bold text-[#0B1D2E]">Doctor Records Manager</h3>
                 <Button
@@ -630,7 +630,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 4: DEPARTMENTS */}
           {activeTab === 'departments' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <h3 className="text-lg font-bold text-[#0B1D2E]">Departments Overview</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {deptsData?.map((dept) => (
@@ -648,7 +648,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 5: BEDS */}
           {activeTab === 'beds' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <h3 className="text-lg font-bold text-[#0B1D2E]">Ward Bed Occupancy Manager</h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {bedsData?.items.map((bed) => (
@@ -679,7 +679,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 6: INQUIRIES */}
           {activeTab === 'inquiries' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <h3 className="text-lg font-bold text-[#0B1D2E]">Contact Inquiries Inbox</h3>
               <div className="divide-y divide-slate-100">
                 {inquiriesData?.map((inq) => (
@@ -720,7 +720,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 7: USERS */}
           {activeTab === 'users' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <h3 className="text-lg font-bold text-[#0B1D2E]">User Accounts & Roles</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
@@ -749,7 +749,7 @@ export const AdminPage: React.FC = () => {
 
           {/* TAB 8: AUDIT LOGS */}
           {activeTab === 'audit' && (
-            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-6">
+            <div className="glass rounded-3xl p-6 space-y-6">
               <h3 className="text-lg font-bold text-[#0B1D2E]">System Audit Trail</h3>
               <div className="space-y-2 text-xs">
                 {auditData?.map((log) => (
