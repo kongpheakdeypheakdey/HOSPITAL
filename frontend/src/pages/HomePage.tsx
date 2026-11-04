@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import {
-  ShieldAlert,
   ArrowRight,
   PhoneCall,
   Stethoscope,
@@ -44,7 +43,7 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ផ្នែកពិគ្រោះជំងឺក្រៅ (OPD)' : 'Outpatient Department (OPD)',
       desc: isKhmer
-        ? 'ផ្តល់សេវាពិគ្រោះ ពិនិត្យវិភាគរោគសញ្ញា និងព្យាបាលអ្នកជំងឺដែលមិនតម្រូវឱ្យសម្រាកគេងនៅមន្ទីរពេទ្យ។'
+        ? 'ផ្តល់សេវាពិគ្រោះ ពិនិត្យវិភាគរោគសញ្ញា និងព្យាបាលអ្នកជំងឺដែលមិនតម្រូវឱ្យសម្រាកគេងនៅមន្ទីរពេទ្យ'
         : 'Provides medical consultations, diagnostic evaluations, and treatments for patients who do not require overnight hospitalization.',
       icon: Stethoscope,
       color: 'bg-[#EAF4FF] text-[#0F4C8A] border-[#C7DEF9]',
@@ -52,13 +51,13 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ផ្នែកសង្គ្រោះបន្ទាន់' : 'Emergency Department',
       desc: isKhmer
-        ? 'ផ្តល់ការសង្គ្រោះ និងព្យាបាលបន្ទាន់ ២៤ ម៉ោងលើ ២៤ ម៉ោង សម្រាប់ករណីគ្រោះថ្នាក់ចៃដន្យ ជំងឺធ្ងន់ធ្ងរ ឬស្ថានភាពគំរាមកំហែងដល់អាយុជីវិត។'
+        ? 'ផ្តល់ការសង្គ្រោះ និងព្យាបាលបន្ទាន់ ២៤ ម៉ោងលើ ២៤ ម៉ោង សម្រាប់ករណីគ្រោះថ្នាក់ចៃដន្យ ជំងឺធ្ងន់ធ្ងរ ឬស្ថានភាពគំរាមកំហែងដល់អាយុជីវិត'
         : 'Delivers immediate 24/7 medical care for acute illnesses, severe trauma, and life-threatening conditions.',
       icon: Ambulance,
       color: 'bg-[#FFF1F1] text-[#B42318] border-[#FECACA]',
     },
     {
-      title: isKhmer ? 'ផ្នែកវេជ្ជសាស្ត្ររូបភាព និងរោគវិនិច្ឆ័យដោយកាំរស្មី' : 'Medical Imaging & Radiology',
+      title: isKhmer ? 'ផ្នែករូបភាពវេជ្ជសាស្ត្រ និងអន្តរាគមន៍វិទ្យុសាស្រ្ត' : 'Medical Imaging & Radiology',
       desc: isKhmer
         ? 'ប្រើប្រាស់បច្ចេកវិទ្យារូបភាពទំនើបៗ (ដូចជា អ៊ិចរ៉េ អេកូ ស្កេន CT និង MRI) ដើម្បីធ្វើរោគវិនិច្ឆ័យ និងតាមដានស្ថានភាពជំងឺបានច្បាស់លាស់។'
         : 'Uses advanced imaging technologies (X-ray, CT scan, MRI, ultrasound) to accurately diagnose and monitor medical conditions.',
@@ -68,7 +67,7 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ផ្នែកជំងឺមហារីក និងព្យាបាលដោយកាំរស្មី' : 'Oncology & Radiotherapy',
       desc: isKhmer
-        ? 'ជំនាញក្នុងការថែទាំ និងព្យាបាលជំងឺមហារីកគ្រប់ជ្រុងជ្រោយ រួមមានការព្យាបាលដោយគីមី ការបាញ់កាំរស្មី និងការថែទាំលើកកម្ពស់គុណភាពជីវិត។'
+        ? 'ជំនាញក្នុងការថែទាំ និងព្យាបាលជំងឺមហារីកគ្រប់ជ្រុងជ្រោយ រួមមានការព្យាបាលដោយគីមី ការបាញ់កាំរស្មី និងការថែទាំលើកកម្ពស់គុណភាពជីវិត'
         : 'Specializes in comprehensive cancer care, including systemic therapies, targeted radiation treatments, and supportive care.',
       icon: Radiation,
       color: 'bg-violet-50 text-violet-600 border-violet-200',
@@ -76,7 +75,7 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ផ្នែកមន្ទីរពិសោធន៍ (ឡាបូ)' : 'Laboratory Department',
       desc: isKhmer
-        ? 'ធ្វើតេស្តវិភាគសំណាកឈាម ទឹករាវក្នុងរាងកាយ និងជាលិកា ដើម្បីជួយគ្រូពេទ្យធ្វើរោគវិនិច្ឆ័យ និងកំណត់វិធីព្យាបាលបានត្រឹមត្រូវ។'
+        ? 'ធ្វើតេស្តវិភាគសំណាកឈាម ទឹករាវក្នុងរាងកាយ និងជាលិកា ដើម្បីជួយគ្រូពេទ្យធ្វើរោគវិនិច្ឆ័យ និងកំណត់វិធីព្យាបាលបានត្រឹមត្រូវ'
         : 'Performs clinical tests on blood, bodily fluids, and tissue samples to assist in precise disease diagnosis and management.',
       icon: FlaskConical,
       color: 'bg-amber-50 text-amber-600 border-amber-200',
@@ -92,7 +91,7 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ផ្នែករោគស្ត្រី' : 'Gynecology Department',
       desc: isKhmer
-        ? 'ផ្តោតលើការថែទាំសុខភាពបន្តពូជរបស់ស្ត្រី ការពិនិត្យសុខភាពទូទៅ និងការព្យាបាលជំងឺផ្សេងៗដែលពាក់ព័ន្ធនឹងប្រព័ន្ធរោគស្ត្រី។'
+        ? 'ផ្តោតលើការថែទាំសុខភាពបន្តពូជរបស់ស្ត្រី ការពិនិត្យសុខភាពទូទៅ និងការព្យាបាលជំងឺផ្សេងៗដែលពាក់ព័ន្ធនឹងប្រព័ន្ធរោគស្ត្រី'
         : 'Focuses on female reproductive health, routine gynecological screenings, and surgical or medical treatment of pelvic conditions.',
       icon: Baby,
       color: 'bg-pink-50 text-pink-600 border-pink-200',
@@ -100,7 +99,7 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ផ្នែកវះកាត់' : 'Surgical Department',
       desc: isKhmer
-        ? 'ទទួលបន្ទុកធ្វើការវះកាត់តាមការគ្រោងទុក និងការវះកាត់បន្ទាន់លើឯកទេសជាច្រើន ដោយប្រើបច្ចេកទេសវះកាត់ចោះ ឬវះកាត់បើកចំហ។'
+        ? 'ទទួលបន្ទុកធ្វើការវះកាត់តាមការគ្រោងទុក និងការវះកាត់បន្ទាន់លើឯកទេសជាច្រើន ដោយប្រើបច្ចេកទេសវះកាត់ចោះ ឬវះកាត់បើកចំហ'
         : 'Performs elective and urgent operative procedures across multiple specialties using minimally invasive and open techniques.',
       icon: Scissors,
       color: 'bg-cyan-50 text-cyan-700 border-cyan-200',
@@ -116,23 +115,23 @@ export const HomePage: React.FC = () => {
     {
       title: isKhmer ? 'ឱសថស្ថាន' : 'Pharmacy',
       desc: isKhmer
-        ? 'ចែកចាយ និងផ្តល់ថ្នាំពេទ្យ ប្រឹក្សាយោបល់អំពីរបៀបប្រើប្រាស់ថ្នាំ និងធានានូវសុវត្ថិភាពខ្ពស់ក្នុងការប្រើប្រាស់ឱសថ។'
+        ? 'ចែកចាយ និងផ្តល់ថ្នាំពេទ្យ ប្រឹក្សាយោបល់អំពីរបៀបប្រើប្រាស់ថ្នាំ និងធានានូវសុវត្ថិភាពខ្ពស់ក្នុងការប្រើប្រាស់ឱសថ'
         : 'Dispenses medications, provides medication counseling, and manages pharmaceutical supplies to ensure safe drug therapy.',
       icon: Pill,
       color: 'bg-[#F5F6F8] text-[#1E293B] border-[#E2E8F0]',
     },
     {
-      title: isKhmer ? 'ផ្នែកឆ្លុះពិនិត្យ (ឆ្លុះក្រពះ ពោះវៀន)' : 'Endoscopy Department',
+      title: isKhmer ? 'ផ្នែកអង់ដូស្គូពី' : 'Endoscopy Department',
       desc: isKhmer
-        ? 'ប្រើប្រាស់ឧបករណ៍កាមេរ៉ាឆ្លុះដើម្បីពិនិត្យ យកជាលិកាធ្វើតេស្ត និងព្យាបាលបញ្ហាផ្សេងៗក្នុងប្រព័ន្ធរំលាយអាហារ ដូចជា ក្រពះ និងពោះវៀន។'
+        ? 'ប្រើប្រាស់ឧបករណ៍កាមេរ៉ាឆ្លុះដើម្បីពិនិត្យ យកជាលិកាធ្វើតេស្ត និងព្យាបាលបញ្ហាផ្សេងៗក្នុងប្រព័ន្ធរំលាយអាហារ ដូចជា ក្រពះ និងពោះវៀន'
         : 'Uses specialized camera scopes to examine, biopsy, and treat disorders within the gastrointestinal tract and internal organs.',
       icon: Microscope,
       color: 'bg-teal-50 text-teal-600 border-teal-200',
     },
     {
-      title: isKhmer ? 'ផ្នែកថែទាំអ្នកជំងឺកម្រិតធ្ងន់ - ICU' : 'Intensive Care Unit - ICU',
+      title: isKhmer ? 'ផ្នែកប្រពោធនកម្ម' : 'Intensive Care Unit',
       desc: isKhmer
-        ? 'ផ្តល់ការតាមដានជាបន្តបន្ទាប់ និងឧបករណ៍ជួយរស់ទំនើប សម្រាប់អ្នកជំងឺដែលស្ថិតក្នុងស្ថានភាពធ្ងន់ធ្ងរ និងត្រូវការថែទាំពិសេស។'
+        ? 'ផ្តល់ការតាមដានជាបន្តបន្ទាប់ និងឧបករណ៍ជួយរស់ទំនើប សម្រាប់អ្នកជំងឺដែលស្ថិតក្នុងស្ថានភាពធ្ងន់ធ្ងរ និងត្រូវការថែទាំពិសេស'
         : 'Provides continuous monitoring, advanced life-support systems, and specialized care for critically ill patients.',
       icon: HeartPulse,
       color: 'bg-lime-50 text-lime-700 border-lime-200',
@@ -149,7 +148,7 @@ export const HomePage: React.FC = () => {
             <img
               key={src}
               src={src}
-              alt={isKhmer ? 'មន្ទីរពេទ្យហ្លួងម៉ែ' : 'Luang Mè Hospital'}
+              alt={isKhmer ? 'មន្ទីរពេទ្យ ហ្លួង ម៉ែ' : 'Luang Mè Hospital'}
               aria-hidden={i !== activeSlide}
               className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
                 i === activeSlide ? 'opacity-100 animate-kenburns' : 'opacity-0'
@@ -162,27 +161,15 @@ export const HomePage: React.FC = () => {
 
           <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
             <div className="max-w-3xl">
-              {/* Eyebrow / accreditation label */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
-                <ShieldAlert className="h-4 w-4 text-sky-300" />
-                <span className={`text-xs font-semibold uppercase tracking-wide text-sky-100 ${isKhmer ? 'font-khmer' : ''}`}>
-                  {isKhmer ? 'មន្ទីរពេទ្យសាធារណៈឯកទេសមហារីក' : "Cambodia's First Public Cancer Hospital"}
-                </span>
-              </div>
-
               <h1
-                className={`mt-6 text-4xl font-extrabold text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl ${
-                  isKhmer ? 'font-khmer leading-snug' : 'tracking-tight leading-[1.05]'
+                className={`mt-8 mb-4 text-4xl font-extrabold text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.0)] sm:text-5xl md:text-6xl ${
+                  isKhmer ? 'font-khmer leading-relaxed' : 'tracking-tight leading-[1.05]'
                 }`}
+                style={isKhmer ? { wordSpacing: '0.1em', letterSpacing: '0.01em' } : undefined}
               >
-                {isKhmer ? 'មន្ទីរពេទ្យថ្នាក់ជាតិឯកទេសមហារីក' : 'The National Cancer Hospital'}
+                <span className="block">{isKhmer ? 'មន្ទីរពេទ្យថ្នាក់ជាតិ' : 'The National'}</span>
+                <span className="mt-3 block">{isKhmer ? 'ឯកទេសព្យាបាលជំងឺមហារីក' : 'Cancer Hospital'}</span>
               </h1>
-
-              <p className={`mt-5 max-w-xl text-base text-slate-200 sm:text-lg ${isKhmer ? 'font-khmer leading-relaxed' : ''}`}>
-                {isKhmer
-                  ? 'ផ្តល់ការព្យាបាលជំងឺមហារីកប្រកបដោយគុណភាព ដោយក្រុមវេជ្ជបណ្ឌិតឯកទេស និងបច្ចេកវិទ្យាវេជ្ជសាស្ត្រទំនើប។'
-                  : 'Delivering compassionate, world-class cancer care with specialist doctors and advanced medical technology.'}
-              </p>
 
               {/* Call-to-action buttons */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -229,7 +216,7 @@ export const HomePage: React.FC = () => {
           </h2>
           <p className="text-sm text-slate-600">
             {isKhmer
-              ? 'ផ្តល់ជូនសេវាព្យាបាលឯកទេស ជាមួយបរិក្ខារវេជ្ជសាស្ត្រទំនើប និងគ្រូពេទ្យជំនាញ។'
+              ? 'ផ្តល់ជូនសេវាព្យាបាលឯកទេស ជាមួយបរិក្ខារវេជ្ជសាស្ត្រទំនើប និងគ្រូពេទ្យជំនាញ'
               : 'Specialized healthcare services delivered by experienced doctors using advanced medical equipment.'}
           </p>
         </div>
@@ -267,7 +254,7 @@ export const HomePage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2 max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1D2E] font-serif">
-            {isKhmer ? 'ថ្នាក់ដឹកនាំនៃមន្ទីរពេទ្យ ហ្លួងម៉ែ' : 'Our Directors of Luang Mè Hospital'}
+            {isKhmer ? 'ថ្នាក់ដឹកនាំនៃមន្ទីរពេទ្យ ហ្លួង ម៉ែ' : 'Our Directors of Luang Mè Hospital'}
           </h2>
           <p className="text-sm text-slate-600">
             {isKhmer
@@ -364,7 +351,7 @@ export const HomePage: React.FC = () => {
                     {isKhmer ? 'ទីតាំង' : 'Location'}
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D2E] font-sans leading-tight">
-                    {isKhmer ? 'មន្ទីរពេទ្យហ្លួងម៉ែ' : 'Luang Mè Hospital'}
+                    {isKhmer ? 'មន្ទីរពេទ្យ ហ្លួង ម៉ែ' : 'Luang Mè Hospital'}
                   </h3>
                 </div>
 

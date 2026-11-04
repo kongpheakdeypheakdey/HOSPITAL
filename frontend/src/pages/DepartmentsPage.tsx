@@ -32,7 +32,7 @@ const getDepartmentImage = (dept: Department) => {
 const getDepartmentName = (dept: Department, isKhmer: boolean) => {
   const normalizedName = dept.name?.toLowerCase() ?? '';
   if (normalizedName.includes('rehabilitation services') || normalizedName.includes('intensive care unit')) {
-    return isKhmer ? 'ផ្នែកថែទាំអ្នកជំងឺកម្រិតធ្ងន់ - ICU' : 'Intensive Care Unit - ICU';
+    return isKhmer ? 'ផ្នែកប្រពោធនកម្ម' : 'Intensive Care Unit - ICU';
   }
 
   if (isKhmer && dept.nameKm) return dept.nameKm;
@@ -94,7 +94,7 @@ export const DepartmentsPage: React.FC = () => {
         </h1>
         <p className="text-sm text-slate-600">
           {isKhmer
-            ? 'មន្ទីរពេទ្យ ហ្លួងម៉ែ មានផ្នែកព្យាបាលឯកទេសជាច្រើន ប្រកបដោយសម្ភារៈទំនើប និងគ្រូពេទ្យជំនាញ។'
+            ? 'មន្ទីរពេទ្យ ហ្លួងម៉ែ មានផ្នែកព្យាបាលឯកទេសជាច្រើន ប្រកបដោយសម្ភារៈទំនើប និងគ្រូពេទ្យជំនាញ'
             : 'Comprehensive clinical specialties equipped with modern diagnostic & treatment technology.'}
         </p>
       </div>

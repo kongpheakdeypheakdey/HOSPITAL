@@ -86,7 +86,7 @@ export const DoctorsPage: React.FC = () => {
         </h1>
         <p className="text-sm text-slate-600">
           {isKhmer
-            ? 'ស្វែងរក និងកក់ការណាត់ជួបជាមួយវេជ្ជបណ្ឌិតដែលមានបទពិសោធន៍ខ្ពស់របស់មន្ទីរពេទ្យ ហ្លួងម៉ែ។'
+            ? 'ស្វែងរក និងកក់ការណាត់ជួបជាមួយវេជ្ជបណ្ឌិតដែលមានបទពិសោធន៍ខ្ពស់របស់មន្ទីរពេទ្យ ហ្លួង ម៉ែ'
             : 'Find and schedule a consultation with our experienced clinical specialists.'}
         </p>
       </div>
@@ -100,7 +100,7 @@ export const DoctorsPage: React.FC = () => {
               setSearchTerm(val);
               setPage(1);
             }}
-            placeholder={isKhmer ? 'ស្វែងរកតាមឈ្មោះ ឬឯកទេស...' : 'Search doctor name or specialty...'}
+            placeholder={isKhmer ? 'ស្វែងរក...' : 'Search doctor name or specialty...'}
           />
         </div>
 
@@ -112,7 +112,7 @@ export const DoctorsPage: React.FC = () => {
           }}
           className="w-full sm:w-64 text-sm font-medium rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#0F4C8A]"
         >
-          <option value="">{isKhmer ? 'គ្រប់នាយកដ្ឋានទាំងអស់' : 'All Departments'}</option>
+          <option value="">{isKhmer ? 'ផ្នែកទាំងអស់' : 'All Departments'}</option>
           {departments?.map((d) => (
             <option key={d.id} value={d.id}>
               {isKhmer && d.nameKm ? d.nameKm : d.name}

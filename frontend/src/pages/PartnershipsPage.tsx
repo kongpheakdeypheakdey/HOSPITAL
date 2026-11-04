@@ -12,6 +12,7 @@ const getPartnerTypeLabel = (type: string, isKhmer: boolean) => {
     'Volunteer Program': { en: 'Volunteer Program', km: 'កម្មវិធីស្ម័គ្រចិត្ត' },
     Donation: { en: 'Donation', km: 'ការបរិច្ចាគ' },
     'Cancer Institute': { en: 'Cancer Institute', km: 'វិទ្យាស្ថានជំងឺមហារីក' },
+    'Cancer Hospital': { en: 'Cancer Hospital', km: 'មន្ទីរពេទ្យជំងឺមហារីក' },
     Hospital: { en: 'Hospital', km: 'មន្ទីរពេទ្យ' },
     Organization: { en: 'Organization', km: 'អង្គការ' },
     Academic: { en: 'Academic', km: 'សិក្សា' },
@@ -45,7 +46,9 @@ export const PartnershipsPage: React.FC = () => {
 
   const internationalPartners = data.filter((part) => part.country !== 'Cambodia');
 
-  const renderCard = (part: Partnership) => (
+  const renderCard = (part: Partnership) => {
+    // Partner names stay in English; only descriptions translate to Khmer.
+    return (
     <div
       key={part.id}
       className="group rounded-[28px] glass p-5 transition duration-200 hover:-translate-y-1 hover:"
@@ -65,7 +68,7 @@ export const PartnershipsPage: React.FC = () => {
 
       <div className="mb-3">
         <h3 className="text-lg font-bold text-[#0B1D2E] group-hover:text-[#0F4C8A]">
-          {isKhmer && part.nameKm ? part.nameKm : part.name}
+          {part.name}
         </h3>
         <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
           {getCountryLabel(part.country, isKhmer)}
@@ -76,7 +79,8 @@ export const PartnershipsPage: React.FC = () => {
         {isKhmer && part.descKm ? part.descKm : part.description}
       </p>
     </div>
-  );
+    );
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
@@ -90,7 +94,7 @@ export const PartnershipsPage: React.FC = () => {
         </h1>
         <p className="text-sm text-slate-600">
           {isKhmer
-            ? 'មន្ទីរពេទ្យ ហ្លួងម៉ែ សហការជាមួយស្ថាប័នសាធារណៈ សាកលវិទ្យាល័យ និងអង្គការអន្តរជាតិ ដើម្បីបង្កើនគុណភាពសុខភាព និងការអប់រំវេជ្ជសាស្ត្រ។'
+            ? 'មន្ទីរពេទ្យ ហ្លួង ម៉ែ សហការជាមួយស្ថាប័នសាធារណៈ សាកលវិទ្យាល័យ និងអង្គការអន្តរជាតិ ដើម្បីបង្កើនគុណភាពសុខភាព និងការអប់រំវេជ្ជសាស្ត្រ'
             : 'Luang Mè Hospital collaborates with academic institutions, healthcare organizations, and international partners to advance quality care and medical education.'}
         </p>
       </div>
@@ -105,12 +109,12 @@ export const PartnershipsPage: React.FC = () => {
                 <GraduationCap className="h-5 w-5" />
               </div>
               <h2 className="text-2xl font-bold text-[#0B1D2E]">
-                {isKhmer ? 'ដៃគូក្នុងប្រទេស' : 'National Partnerships'}
+                {isKhmer ? 'ដៃគូក្នុង​ជាតិ' : 'National Partnerships'}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-              {nationalPartners.length > 0 ? nationalPartners.map(renderCard) : <p className="text-slate-500">{isKhmer ? 'មិនមានដៃគូក្នុងประเทศ' : 'No national partnerships available.'}</p>}
+              {nationalPartners.length > 0 ? nationalPartners.map(renderCard) : <p className="text-slate-500">{isKhmer ? 'មិនមានដៃគូក្នុងស្រុក' : 'No national partnerships available.'}</p>}
             </div>
           </section>
 

@@ -138,7 +138,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0B1D2E] font-serif">
-          {isKhmer ? 'អំពី មន្ទីរពេទ្យ ហ្លួងម៉ែ' : 'About Luang Mè Hospital'}
+          {isKhmer ? 'អំពី មន្ទីរពេទ្យ ហ្លួង ម៉ែ' : 'About Luang Mè Hospital'}
         </h1>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
           {isKhmer

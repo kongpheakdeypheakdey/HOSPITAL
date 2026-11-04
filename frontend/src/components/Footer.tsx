@@ -28,8 +28,8 @@ export const Footer: React.FC = () => {
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
               {isKhmer
-                ? 'មន្ទីរពេទ្យ ហ្លួងម៉ែ ជាស្ថាប័នសុខាភិបាលជាតិថ្នាក់ដឹកនាំ ប្តេជ្ញាផ្តល់ការថែទាំសុខភាពកម្រិតខ្ពស់ និងសេវាមនុស្សធម៌ជូនប្រជាពលរដ្ឋ។'
-                : 'Luang Mè Hospital is a premier national medical institution committed to providing compassionate, world-class healthcare, advanced treatment, and medical education.'}
+                ? 'មន្ទីរពេទ្យ ហ្លួង ម៉ែ ជា​មន្ទីរពេទ្យងថ្នាក់ជាតិ​ ឯកទេសព្យាបាលជំងងឺមហារីក ដែលផ្ដល់ជូននូវសេវាព្យាបាល ថែទាំ និងពិនិត្យសុខភាព ទូទៅយ៉ាងទូលំទូលាយ ជាពិសេសផ្តោតសំខាន់ទៅលើការព្យាបាលជំងឺមហារីកគ្រប់េប្រភេទ ដោយបច្ចេកវិទ្យាទំនើប ជាមួយវេជ្ជបណ្ឌិត ឯកទេសដែលមានជំនាញវិជ្ជាជីវៈខ្ពស់ ផ្តល់នូវទំនុកចិត្ត និងក្តីសង្ឃឹម'
+                : 'Luang Mae Hospital is a national specialized cancer hospital that provides comprehensive general healthcare, examination, and treatment services. It focuses particularly on treating all types of cancer using modern technology and highly skilled specialist doctors, delivering trust and hope.'}
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs text-emerald-400 font-semibold">
               <Heart className="w-4 h-4 fill-emerald-400" />

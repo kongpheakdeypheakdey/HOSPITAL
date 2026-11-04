@@ -40,7 +40,7 @@ export const departments: Department[] = [
   {
     id: 3,
     name: 'Medical Imaging & Radiology',
-    nameKm: 'ផ្នែកវេជ្ជសាស្ត្ររូបភាព និងរោគវិនិច្ឆ័យដោយកាំរស្មី',
+    nameKm: 'ផ្នែករូបភាពវេជ្ជសាស្ត្រ និងអន្តរាគមន៍វិទ្យុសាស្រ្ត',
     code: 'RADIOLOGY',
     head: 'Dr. Kong Reasmey',
     beds: 15,
@@ -107,7 +107,8 @@ export const departments: Department[] = [
     status: 'open',
     description:
       'Specializes in the surgical diagnosis, staging, and treatment of cancers affecting the female reproductive system, including ovarian, cervical, uterine, vaginal, and vulvar malignancies.',
-    descKm: null,
+    descKm:
+      'ជំនាញក្នុងការធ្វើរោគវិនិច្ឆ័យ កំណត់ដំណាក់កាល និងវះកាត់ព្យាបាលជំងឺមហារីកនៃប្រព័ន្ធបន្តពូជស្ត្រី រួមមានមហារីកអូវែរ មាត់ស្បូន ស្បូន ទ្វារមាស និងប្រដាប់បន្តពូជខាងក្រៅ។',
     image: '/image/departments/gynecology.png',
   },
   {
@@ -121,7 +122,8 @@ export const departments: Department[] = [
     status: 'open',
     description:
       'Specializes in the surgical management and resection of solid malignant tumors, including diagnostic biopsies, tumor removals, and reconstructive cancer surgeries.',
-    descKm: null,
+    descKm:
+      'ជំនាញក្នុងការវះកាត់ និងកាត់ដុំសាច់មហារីករឹងចេញ រួមមានការយកជាលិកាធ្វើតេស្តរោគវិនិច្ឆ័យ ការវះកាត់យកដុំសាច់ចេញ និងការវះកាត់ស្ថាបនាឡើងវិញ។',
     image: '/image/departments/surgical-1.jpg',
   },
   {
@@ -135,7 +137,8 @@ export const departments: Department[] = [
     status: 'open',
     description:
       'Coordinates patient administrative support, manages public health insurance schemes such as NSSF and Health Equity Funds, and connects vulnerable patients with financial and social welfare assistance.',
-    descKm: null,
+    descKm:
+      'សម្របសម្រួលការគាំទ្ររដ្ឋបាលដល់អ្នកជំងឺ គ្រប់គ្រងកម្មវិធីធានារ៉ាប់រងសុខភាពសាធារណៈ ដូចជា ប.ស.ស និងមូលនិធិសមធម៌សុខាភិបាល និងភ្ជាប់អ្នកជំងឺក្រីក្រទៅនឹងជំនួយហិរញ្ញវត្ថុ និងសុខុមាលភាពសង្គម។',
     image: '/image/departments/nssf.JPG',
   },
   {
@@ -156,7 +159,7 @@ export const departments: Department[] = [
   {
     id: 12,
     name: 'Endoscopy Department',
-    nameKm: 'ផ្នែកឆ្លុះពិនិត្យ (ឆ្លុះក្រពះ ពោះវៀន)',
+    nameKm: 'ផ្នែកអង់ដូស្គូពី',
     code: 'ENDOSCOPY',
     head: 'Dr. Vong Vathanak',
     beds: 8,
@@ -171,7 +174,7 @@ export const departments: Department[] = [
   {
     id: 13,
     name: 'Intensive Care Unit - ICU',
-    nameKm: 'ផ្នែកថែទាំអ្នកជំងឺកម្រិតធ្ងន់ - ICU',
+    nameKm: 'ផ្នែកប្រពោធនកម្ម',
     code: 'ICU',
     head: 'Head: Dr. Chheang Kho',
     beds: 10,
@@ -263,7 +266,7 @@ export const doctors: Doctor[] = [
     name: 'Dr. Kong Reasmey',
     nameKm: 'លោកវេជ្ជ.ឯកទេស គង់ រស្មី',
     specialty: 'Head of Medical Imaging and Interventional Radiology Department',
-    specialtyKm: 'នាយផ្នែករូបភាពវេជ្ជសាស្ត្រ និងអន្តរាគមន៍វិទ្យុសាស្រ្ត',
+    specialtyKm: 'នាយផ្នែកជំងឺមហារីក និងព្យាបាលដោយកាំរស្មី',
     departmentId: 3,
     status: 'active',
     image: '/image/pic7.png',
@@ -347,69 +350,88 @@ export const partnerships: Partnership[] = [
   {
     id: 2,
     name: 'Physicien Medical Sans Frontières',
+    nameKm: 'អ្នកជំនាញរូបវិទ្យាវេជ្ជសាស្ត្រគ្មានព្រំដែន',
     type: 'Medical Organization',
     country: 'International',
     icon: '🩺',
     description:
       'International medical physics collaboration supporting specialist knowledge exchange and cancer care.',
+    descKm:
+      'កិច្ចសហការអន្តរជាតិផ្នែករូបវិទ្យាវេជ្ជសាស្ត្រ គាំទ្រការផ្លាស់ប្តូរចំណេះដឹងឯកទេស និងការព្យាបាលជំងឺមហារីក។',
     image: '/images/partnerships/international/Physicien Medical.png',
   },
   {
     id: 3,
     name: 'Australian Aid: Australian Volunteer Program (AVI)',
+    nameKm: 'ជំនួយអូស្ត្រាលី៖ កម្មវិធីស្ម័គ្រចិត្តអូស្ត្រាលី (AVI)',
     type: 'Volunteer Program',
     country: 'Australia',
     icon: '🇦🇺',
     description:
       'Australian volunteer program supporting healthcare training, hospital services, and professional development.',
+    descKm:
+      'កម្មវិធីស្ម័គ្រចិត្តអូស្ត្រាលី គាំទ្រការបណ្តុះបណ្តាលសុខាភិបាល សេវាមន្ទីរពេទ្យ និងការអភិវឌ្ឍវិជ្ជាជីវៈ។',
     image: '/images/partnerships/international/avi-logo.jpg',
   },
   {
     id: 4,
     name: 'The Association of the Church of Jesus Christ of Latter-Day Saints (Donation)',
+    nameKm: 'សមាគមន៍ក្រុមជំនុំយេស៊ូគ្រីស្ទនៃពួកបរិសុទ្ធថ្ងៃចុងក្រោយ (ការបរិច្ចាគ)',
     type: 'Donation',
     country: 'International',
     icon: '🤝',
     description: 'Donation partnership supporting hospital services and patient care.',
+    descKm: 'កិច្ចសហការបរិច្ចាគ គាំទ្រសេវាកម្មមន្ទីរពេទ្យ និងការថែទាំអ្នកជំងឺ។',
     image: '/images/partnerships/international/donation-logo.jpg',
   },
   {
     id: 5,
     name: 'Institut de Cancérologie de Strasbourg',
+    nameKm: 'វិទ្យាស្ថានជំងឺមហារីក ស្ត្រាសបួរ',
     type: 'Cancer Institute',
     country: 'France',
     icon: '🏥',
     description:
       'International cancer care and medical collaboration with Institut de Cancérologie de Strasbourg.',
+    descKm:
+      'កិច្ចសហការព្យាបាលជំងឺមហារីក និងវេជ្ជសាស្ត្រអន្តរជាតិ ជាមួយវិទ្យាស្ថានជំងឺមហារីក ស្ត្រាសបួរ។',
     image: '/images/partnerships/international/icans-logo.jpg',
   },
   {
     id: 6,
     name: 'Institut Paoli-Calmettes Unicancer Marseille',
+    nameKm: 'វិទ្យាស្ថាន ប៉ោលី-កាលម៉ែត យូនីខេនស័រ ម៉ាសេយ',
     type: 'Cancer Institute',
     country: 'France',
     icon: '🏥',
     description:
       'Cancer care and professional collaboration with Institut Paoli-Calmettes, Unicancer Marseille.',
+    descKm:
+      'កិច្ចសហការព្យាបាលជំងឺមហារីក និងវិជ្ជាជីវៈ ជាមួយវិទ្យាស្ថាន ប៉ោលី-កាលម៉ែត យូនីខេនស័រ ម៉ាសេយ។',
     image: '/images/partnerships/international/IPC-logo.jpg',
   },
   {
     id: 7,
     name: 'Korean University Anam Hospital',
+    nameKm: 'មន្ទីរពេទ្យ អាណាម សាកលវិទ្យាល័យកូរ៉េ',
     type: 'Hospital',
     country: 'South Korea',
     icon: '🏥',
     description: 'Clinical exchange program, surgical consultation, and advanced telemedicine support.',
+    descKm: 'កម្មវិធីផ្លាស់ប្តូរគ្លីនិក ការពិគ្រោះវះកាត់ និងការគាំទ្រពេទ្យពីចម្ងាយទំនើប។',
     image: '/images/partnerships/international/Korean University Anam Hospital.png',
   },
   {
     id: 8,
     name: 'Yunan Cancer Hospital (The Third Affiliated Hospital of Kunming Medical University)',
+    nameKm: 'មន្ទីរពេទ្យជំងឺមហារីកយូណាន (មន្ទីរពេទ្យបង្គល់ទី៣ នៃសាកលវិទ្យាល័យវេជ្ជសាស្ត្រគុនមីង)',
     type: 'Cancer Hospital',
     country: 'China',
     icon: '🏥',
     description:
       'Cancer care and clinical collaboration with the Third Affiliated Hospital of Kunming Medical University.',
+    descKm:
+      'កិច្ចសហការព្យាបាលជំងឺមហារីក និងគ្លីនិក ជាមួយមន្ទីរពេទ្យបង្គល់ទី៣ នៃសាកលវិទ្យាល័យវេជ្ជសាស្ត្រគុនមីង។',
     image: '/images/partnerships/international/Yunan Cancer Hospital.jpg',
   },
   {

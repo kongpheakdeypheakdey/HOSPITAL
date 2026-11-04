@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
           <div className="leading-tight text-slate-800">
             {isKhmer ? (
               <div className="text-lg sm:text-2xl font-bold leading-normal whitespace-nowrap font-khmer">
-                មន្ទីរពេទ្យ ហ្លួងម៉ែ
+                មន្ទីរពេទ្យ ហ្លួង ម៉ែ
               </div>
             ) : (
               <div className="text-lg sm:text-2xl font-extrabold tracking-tight uppercase whitespace-nowrap font-sans">
