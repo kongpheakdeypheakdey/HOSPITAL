@@ -142,7 +142,7 @@ export const AboutPage: React.FC = () => {
         </h1>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
           {isKhmer
-            ? 'មន្ទីរពេទ្យនេះត្រូវបានបង្កើតឡើងក្នុងបណ្តុំសេវាថែទាំសុខភាពមូលដ្ឋាន និងបានក្លាយជាមជ្ឈមណ្ឌលព្យាបាលជំងឺមហារីកសាធារណៈដំបូងគេបង្អស់របស់កម្ពុជា។'
+            ? 'មន្ទីរពេទ្យនេះត្រូវបានបង្កើតឡើងក្នុងបណ្តុំសេវាថែទាំសុខភាពមូលដ្ឋាន និងបានក្លាយជាមជ្ឈមណ្ឌលព្យាបាលជំងឺមហារីកសាធារណៈដំបូងគេបង្អស់របស់កម្ពុជា'
             : 'A public specialist cancer hospital and national healthcare center built on a strong humanitarian foundation and dedicated to high-quality, patient-centered care.'}
         </p>
       </div>
